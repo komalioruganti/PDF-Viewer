@@ -3,7 +3,7 @@ import { Document, Page } from 'react-pdf/dist/esm/entry.webpack';
 import { BsFillBookmarkFill } from 'react-icons/bs';
 import { FaShare } from 'react-icons/fa';
 
-function Pdf_Viewer() {
+function PdfViewer() {
   const [numPages, setNumPages] = useState(null);
   const [pageNumber, setPageNumber] = useState(1);
   const [scrollDistance, setScrollDistance] = useState(1)
@@ -86,4 +86,4 @@ function Pdf_Viewer() {
   );
 }
 
-export default Pdf_Viewer;
+export default PdfViewer;

@@ -4,7 +4,7 @@ import 'react-pdf/dist/esm/Page/AnnotationLayer.css';
 import {  BrowserRouter as Router, Route,Routes } from "react-router-dom";
 import './App.css';
 import MinimizedPDF from "./MinimizedPDF"
-import Pdf_Viewer from './pdf_viewer';
+import PdfViewer from './pdf_viewer';
 
 function App() {
 
@@ -16,7 +16,7 @@ function App() {
         <Route  path="/" element = {<MinimizedPDF />}>
           
         </Route>
-        <Route path="/pdf" element = {<Pdf_Viewer />}>
+        <Route path="/pdf" element = {<PdfViewer />}>
           
         </Route>
         </Routes>

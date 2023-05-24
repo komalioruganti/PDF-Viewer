@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import { Document, Page } from 'react-pdf/dist/esm/entry.webpack';
 import 'react-pdf/dist/esm/Page/TextLayer.css';
 import 'react-pdf/dist/esm/Page/AnnotationLayer.css';
-import { BrowserRouter as Router, Route, Link, Switch, useNavigate } from "react-router-dom";
 
 const MinimizedPDF = ()=> {
 

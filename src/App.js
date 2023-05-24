@@ -9,36 +9,14 @@ import PdfViewer from './pdf_viewer';
 function App() {
 
   const [selectedFileName, setSelectedFile] = useState(null)
-  
-  const handleselectedFile = e => {
-    const file = e.target.files[0];
-    const reader = new FileReader();
-
-    reader.onload = () => {
-      const base64 = reader.result;
-      setSelectedFile(base64);
-    };
-
-    reader.readAsDataURL(file);
-  };
-
- 
   return (
     <div className="App" >
-       <input
-    type="file"
-    name="file"
-    onChange={handleselectedFile}
-/>
-      <Router>
-      <Routes>
-      
-        <Route  path="/" element = {<MinimizedPDF selectedFileName={selectedFileName}  />}>
-        </Route>
-        <Route path="/pdf" element = {<PdfViewer selectedFileName={selectedFileName} />}>
-          
-        </Route>
-        </Routes>
+       
+    <Router>
+    <Routes>
+    { <Route path="/" element={<MinimizedPDF selectedFileName={selectedFileName} setSelectedFile={setSelectedFile}/>}></Route>}
+      <Route path="/pdf" element={<PdfViewer selectedFileName={selectedFileName} setSelectedFile={setSelectedFile}/>}></Route>
+      </Routes>
     </Router>
     <style>
   @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');

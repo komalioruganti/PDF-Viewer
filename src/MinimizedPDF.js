@@ -4,7 +4,6 @@ import 'react-pdf/dist/esm/Page/TextLayer.css';
 import 'react-pdf/dist/esm/Page/AnnotationLayer.css';
 
 const MinimizedPDF = ()=> {
-
   
   const [numPages, setNumPages] = useState(null);
   const [pageNumber, setPageNumber] = useState(1);

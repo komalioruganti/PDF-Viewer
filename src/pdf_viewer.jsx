@@ -2,9 +2,8 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Document, Page } from 'react-pdf/dist/esm/entry.webpack';
 import { BsFillBookmarkFill } from 'react-icons/bs';
 import { FaShare } from 'react-icons/fa';
-import pdf_file from './pdf_file';
 
-function PdfViewer() {
+function PdfViewer({selectedFileName}) {
   const [numPages, setNumPages] = useState(null);
   const [pageNumber, setPageNumber] = useState(1);
   const [scrollDistance, setScrollDistance] = useState(1)
@@ -12,6 +11,7 @@ function PdfViewer() {
   const wrapperRef = useRef(null);
 
   useEffect(() => {
+
     const handleScroll = () => {
       const distance = wrapperRef.current.scrollTop;
       setScrollDistance(distance);
@@ -35,8 +35,13 @@ function PdfViewer() {
     return () => {
       wrapperElement.removeEventListener('scroll', handleScroll);
     };
+    
+    
   }, []);
-
+    
+   
+    
+  
 
   function onDocumentLoadSuccess({ numPages }) {
     setNumPages(numPages);
@@ -51,7 +56,7 @@ function PdfViewer() {
     < >
       <center>
         <div className="pdf-wrapper" ref={wrapperRef}>
-          <Document file={pdf_file} onLoadSuccess={onDocumentLoadSuccess} onChange={handleChange}>
+          <Document file={selectedFileName} onLoadSuccess={onDocumentLoadSuccess} onChange={handleChange}>
             {Array.from(new Array(numPages), (el, index) => (
               <>
                 <div key={index}>
